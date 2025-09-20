@@ -17,11 +17,29 @@ export default function ContactPage() {
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         
+        // Temporarily disable form submission and show a toast
         toast({
             title: "Función no disponible",
             description: "El envío de formularios está temporalmente desactivado.",
             variant: "destructive",
         });
+
+        // Uncomment the following lines to enable form submission
+        // const formData = new FormData(event.currentTarget);
+        // const result = await sendContactEmail(formData);
+        // if (result.success) {
+        //     toast({
+        //         title: "Mensaje Enviado",
+        //         description: "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.",
+        //     });
+        //     (event.target as HTMLFormElement).reset();
+        // } else {
+        //      toast({
+        //         title: "Error",
+        //         description: "Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.",
+        //         variant: "destructive"
+        //     });
+        // }
     }
 
   return (
